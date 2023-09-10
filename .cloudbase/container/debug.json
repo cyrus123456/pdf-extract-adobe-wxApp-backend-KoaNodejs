@@ -1,0 +1,46 @@
+{
+  "containers": [
+    {
+      "name": "pdf-extract-adobe-wxapp-backend-koanodejs",
+      "domain": "",
+      "ip": "",
+      "mode": "compose",
+      "containerId": "8de1378f47898dbb989c8edd41d6d7185f6285629df2ffa1ea9ad91457e80fee"
+    }
+  ],
+  "config": {
+    "pdf-extract-adobe-wxapp-backend-koanodejs": {
+      "containerPort": 80,
+      "dockerfilePath": "Dockerfile",
+      "buildDir": "",
+      "minNum": 0,
+      "maxNum": 5,
+      "cpu": 1,
+      "mem": 2,
+      "policyType": "cpu",
+      "policyThreshold": 80,
+      "policyDetails": [
+        {
+          "PolicyType": "cpu",
+          "PolicyThreshold": 80
+        },
+        {
+          "PolicyType": "mem",
+          "PolicyThreshold": 80
+        }
+      ],
+      "envParams": {
+        "MYSQL_USERNAME": "root",
+        "MYSQL_PASSWORD": "Mysql771527",
+        "MYSQL_ADDRESS": "10.33.106.171:3306"
+      },
+      "customLogs": "stdout",
+      "initialDelaySeconds": 2,
+      "dataBaseName": "nodejs_demo",
+      "executeSQLs": [
+        "CREATE DATABASE IF NOT EXISTS nodejs_demo;",
+        "USE nodejs_demo;"
+      ]
+    }
+  }
+}
