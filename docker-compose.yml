@@ -16,7 +16,7 @@ services:
       - wxcloud=pdf-extract-adobe-wxapp-backend-koanodejs
       - role=container
     environment:
-      - MYSQL_ADDRESS=127.0.0.1:3306
+      # - MYSQL_ADDRESS=127.0.0.1:3306
       - MYSQL_USERNAME=root
       - MYSQL_PASSWORD=Mysql771527
       - MYSQL_ADDRESS=sh-cynosdbmysql-grp-ow2xsjyy.sql.tencentcdb.com:22214
