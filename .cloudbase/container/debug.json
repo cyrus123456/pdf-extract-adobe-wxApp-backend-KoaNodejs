@@ -3,7 +3,9 @@
     {
       "name": "pdf-extract-adobe-wxapp-backend-koanodejs",
       "domain": "",
-      "ip": ""
+      "ip": "",
+      "mode": "compose",
+      "containerId": "f8b78632fc801964892c8301222b894cd239b625d90504647f23da60448f7671"
     }
   ],
   "config": {
@@ -30,7 +32,7 @@
       "envParams": {
         "MYSQL_USERNAME": "root",
         "MYSQL_PASSWORD": "Mysql771527",
-        "MYSQL_ADDRESS": "127.0.0.1:3306"
+        "MYSQL_ADDRESS": "sh-cynosdbmysql-grp-ow2xsjyy.sql.tencentcdb.com:22214"
       },
       "customLogs": "stdout",
       "initialDelaySeconds": 2,
