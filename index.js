@@ -1,3 +1,4 @@
+const WebSocket = require('ws');
 const Koa = require("koa");
 const Router = require("koa-router");
 const logger = require("koa-logger");
@@ -60,8 +61,21 @@ app
 const port = process.env.PORT || 80;
 async function bootstrap() {
   await initDB();
-  app.listen(port, () => {
+  const httpServer = app.listen(port, () => {
     console.log("启动成功", port);
+  });
+  const wss = new WebSocket.Server(
+    { server: httpServer, path: "/webSocket/extractpdf" }
+  );
+  wss.on('connection', function connection(ws) {
+    console.log('WebSocket服务启动');
+    ws.on('error', console.error);
+
+    ws.on('message', function message(data) {
+      console.log('received: %s', data);
+    });
+
+    ws.send('something');
   });
 }
 bootstrap();
